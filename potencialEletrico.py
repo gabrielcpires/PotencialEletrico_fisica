@@ -51,3 +51,4 @@ def main():
     plt.ylabel('Eixo y')
     desenhar_cargas(cargas, posicoes)
     plt.title('Potencial Elétrico de uma Distribuição de Cargas')
+# teste
