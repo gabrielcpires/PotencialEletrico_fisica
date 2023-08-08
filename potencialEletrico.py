@@ -51,4 +51,23 @@ def main():
     plt.ylabel('Eixo y')
     desenhar_cargas(cargas, posicoes)
     plt.title('Potencial Elétrico de uma Distribuição de Cargas')
-# teste
+    # teste
+    while True:
+        # Capturar o ponto selecionado pelo usuário com o mouse
+        ponto_selecionado = plt.ginput(1, show_clicks=True)[0]
+        plt.scatter(ponto_selecionado[0], ponto_selecionado[1], s=100, c='black', marker='x')
+
+        # Calcular e exibir o potencial elétrico no ponto selecionado
+        potencial_no_ponto = sum(potencial_electrico(c, p, ponto_selecionado) for c, p in zip(cargas, posicoes))
+        print(f'Potencial Elétrico no ponto selecionado: {potencial_no_ponto:.2f} V')
+
+        # Desenhar a linha equipotencial que passa pelo ponto selecionado
+        desenhar_linha_equipotencial(cargas, posicoes, ponto_selecionado)
+        plt.draw()
+
+    plt.show()
+
+if __name__=='__main__':
+    main()
+
+
