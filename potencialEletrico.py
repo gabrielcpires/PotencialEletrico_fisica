@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Constante eletrostática
-K = 8.99e9
+K = 9.00e9
 
 def potencial_electrico(carga, posicao, ponto):
     # Calcula a distância entre a carga e o ponto selecionado usando a fórmula da distância euclidiana
